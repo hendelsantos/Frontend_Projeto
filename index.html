@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Home - Aplicações Dpto Manutenção</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <div class="background-logo">
+    <img src="assets/logo.png" alt="Logo Hyundai" draggable="false">
+  </div>
+  <div id="wordcloud-container"></div>
+  <div class="portal-container">
+    <div class="glass">
+      <div class="portal-title">Aplicações Dpto Manutenção</div>
+      <div class="carousel-menu" id="carousel-menu">
+        <div class="carousel-track">
+          <div class="carousel-item" data-title="Notas Fiscais" data-desc="Gestão e consulta de notas fiscais eletrônicas." onclick="goTo('notas-fiscais')">
+            <i class="fas fa-file-invoice"></i>
+          </div>
+          <div class="carousel-item" data-title="Demandas (Compras)" data-desc="Controle de solicitações e compras corporativas." onclick="goTo('demandas')">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <div class="carousel-item" data-title="PM05" data-desc="Módulo de manutenção preventiva e corretiva." onclick="goTo('pm05')">
+            <i class="fas fa-tools"></i>
+          </div>
+          <div class="carousel-item" data-title="Gerador de Etiqueta" data-desc="Criação e impressão de etiquetas personalizadas." onclick="goTo('gerador-etiqueta')">
+            <i class="fas fa-barcode"></i>
+          </div>
+          <div class="carousel-item" data-title="Catálogo de Estoque" data-desc="Consulta e gerenciamento do estoque de peças." onclick="goTo('catalogo-estoque')">
+            <i class="fas fa-boxes"></i>
+          </div>
+        </div>
+        <div class="carousel-info">
+          <span id="carousel-title">Selecione um módulo</span>
+          <span id="carousel-desc"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer-glass">
+    Desenvolvido por Hendel Santos e Ederson Moraes
+  </footer>
+  <script src="script.js"></script>
+  <script src="wordcloud.js"></script>
+</body>
+</html>
