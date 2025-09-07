@@ -35,9 +35,16 @@ function createWordCloudElement(word) {
   el.style.fontSize = size + 'rem';
   el.style.opacity = randomBetween(cloudConfig.minOpacity, cloudConfig.maxOpacity);
   el.style.transform = 'none'; // Sempre reto
-  // Posição inicial aleatória restrita ao canto esquerdo (0-28vw) e faixa vertical (8-85vh)
-  el.style.left = randomBetween(cloudConfig.areaPadding, 28 - cloudConfig.areaPadding) + 'vw';
-  el.style.top = randomBetween(8, 85) + 'vh';
+  // Gera a palavra em duas faixas: esquerda (0-38vw) ou direita (82-100vw)
+  let left;
+  if (Math.random() < 0.5) {
+    left = randomBetween(cloudConfig.areaPadding, 38 - cloudConfig.areaPadding);
+  } else {
+    left = randomBetween(82, 100 - cloudConfig.areaPadding);
+  }
+  el.style.left = left + 'vw';
+  // Faixa vertical ampla
+  el.style.top = randomBetween(8, 90) + 'vh';
   // Animação de flutuação
   const duration = randomBetween(cloudConfig.minSpeed, cloudConfig.maxSpeed);
   el.style.setProperty('--float-x', randomBetween(-14, 14) + 'px');
